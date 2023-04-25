@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
+import CounterApp from "./components/CounterApp";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [count, setCount] = useState(0)
+    const plusHandler = () => {
+        setCount(prev => prev + 1)
+    }
+    const minusHandler = () => {
+        setCount(prev => prev - 1)
+    }
+    const resethandler = () => {
+        setCount(0)
+    }
+    return (
+        <div className="container">
+            <h1>Counter: {count}</h1>
+            <CounterApp plusHandler={plusHandler} minusHandler={minusHandler} resethandler={resethandler}/>
+        </div>
+    )
 }
 
-export default App;
+export default App

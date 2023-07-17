@@ -1,16 +1,16 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-export const reducer = createSlice({
+export const countSlice = createSlice({
     name: 'count',
     initialState: {count: 0},
     reducers: {
-        plusHandler: (state, payload) => {
+        plusHandler: (state) => {
             state.count += 1;
         },
-        minusHandler: (state, payload) => {
+        minusHandler: (state) => {
             state.count -= 1;
-        }
-        resetHandler: (state, payload) => {
+        },
+        resetHandler: (state) => {
             state.count = 0;
         }
     }

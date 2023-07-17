@@ -1,7 +1,13 @@
-const PlusHandler = ({plusHandler}) => {
-    return (
-        <button className='btn btn-primary' onClick={plusHandler}>Plus</button>
-    )
-}
+import { useDispatch } from "react-redux";
+import { plusHandler } from "../../reducers/countSlice";
 
-export default PlusHandler
+const PlusHandler = () => {
+    const dispatch = useDispatch();
+    return (
+        <button className="btn btn-primary" onClick={() => dispatch(plusHandler())}>
+            Plus
+        </button>
+    );
+};
+
+export default PlusHandler;
